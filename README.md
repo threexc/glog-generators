@@ -1,8 +1,12 @@
-# GLOG v2 Character Generator
+# glog-generators
 
-This is a simple character generator for the [Many Rats on
+Random content generators for the [Many Rats on
 Sticks](https://drive.google.com/file/d/1wOAkBOCUSjnthMEnIsPVT1LSOCQzd88j/view)
 game system, also known as GLOG v2.
+
+## Rust
+
+### GLOG v2 Character Generator
 
 Run the `stats` binary with e.g.:
 
@@ -23,3 +27,9 @@ or run the web version:
 ```
 cargo run --bin web --features web
 ```
+
+## Python
+
+### hexfiller
+
+Generate a high-level content map for square or hexagonal grid, 
