@@ -2,11 +2,9 @@
 
 Random content generators for the [Many Rats on
 Sticks](https://drive.google.com/file/d/1wOAkBOCUSjnthMEnIsPVT1LSOCQzd88j/view)
-game system, also known as GLOG v2.
+game system, also known as GLOG v2. Should be useful for other systems too.
 
-## Rust
-
-### GLOG v2 Character Generator
+## chargen
 
 Run the `stats` binary with e.g.:
 
@@ -28,8 +26,36 @@ or run the web version:
 cargo run --bin web --features web
 ```
 
-## Python
+## hexmap
 
 ### hexfiller
 
-Generate a high-level content map for square or hexagonal grid, 
+Generate a high-level content map for square or hexagonal grid.
+
+The possibilities are `lair`, `portal`, and `ruin`.
+
+An example, using the defaults:
+
+```
++-------------+------------------+-----------+-----------+-----------+------+------------------+-----------+-----------+-----------+
+|             |                  |           | lair      | lair ruin |      | lair portal      | lair ruin | lair      | lair      |
++-------------+------------------+-----------+-----------+-----------+------+------------------+-----------+-----------+-----------+
+|             | lair portal ruin | lair      | ruin      |           |      |                  | ruin      |           |           |
++-------------+------------------+-----------+-----------+-----------+------+------------------+-----------+-----------+-----------+
+| portal ruin | lair             |           | lair ruin | ruin      |      | lair portal      |           |           | lair ruin |
++-------------+------------------+-----------+-----------+-----------+------+------------------+-----------+-----------+-----------+
+| lair ruin   | lair             | lair ruin |           | portal    |      |                  | ruin      | ruin      |           |
++-------------+------------------+-----------+-----------+-----------+------+------------------+-----------+-----------+-----------+
+|             |                  | ruin      |           |           | ruin |                  | portal    | lair ruin | lair      |
++-------------+------------------+-----------+-----------+-----------+------+------------------+-----------+-----------+-----------+
+| ruin        |                  | lair      |           |           |      | lair portal ruin |           |           | lair      |
++-------------+------------------+-----------+-----------+-----------+------+------------------+-----------+-----------+-----------+
+|             |                  |           | ruin      |           |      | ruin             | lair      |           |           |
++-------------+------------------+-----------+-----------+-----------+------+------------------+-----------+-----------+-----------+
+| lair        | lair             | lair      |           | ruin      | ruin |                  |           |           | ruin      |
++-------------+------------------+-----------+-----------+-----------+------+------------------+-----------+-----------+-----------+
+| ruin        | ruin             | ruin      | lair ruin | lair      | lair | ruin             | lair ruin |           | lair      |
++-------------+------------------+-----------+-----------+-----------+------+------------------+-----------+-----------+-----------+
+|             |                  | lair      | ruin      | ruin      | lair | ruin             |           | ruin      |           |
++-------------+------------------+-----------+-----------+-----------+------+------------------+-----------+-----------+-----------+
+```
